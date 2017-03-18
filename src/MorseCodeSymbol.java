@@ -8,6 +8,36 @@ public class MorseCodeSymbol
     private String letter;
     private String symbol;
 
-    //  SNIP SNIP SNIP
+    // CONSTRUCTORS
+
+    public MorseCodeSymbol()
+    {
+
+    }
+
+    public MorseCodeSymbol(String letter, String symbol)
+    {
+        this.letter = letter;
+        this.symbol = symbol;
+    }
+
+
+    // ACCESSORS
+
+    public String getLetter()
+    {
+        return this.letter;
+    }
+
+    public String toString()
+    {
+        return String.format("Translation: %s ", letter);
+    }
+
+
+
+
+
+    // // //
 
 }

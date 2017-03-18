@@ -1,0 +1,20 @@
+0 [main] DEBUG MorseCodeTranslator  - Inside the MorseCodeTranslator's 1-arg constructor: FNAME[input.txt]
+1 [main] DEBUG Main  - Beginning the main program.
+1 [main] DEBUG Main  - Exiting the main program.
+0 [main] DEBUG MorseCodeTranslator  - Inside the MorseCodeTranslator's 1-arg constructor: FNAME[input.txt]
+1 [main] DEBUG Main  - Beginning the main program.
+1 [main] DEBUG Main  - Exiting the main program.
+0 [main] DEBUG MorseCodeTranslator  - Inside the MorseCodeTranslator's 1-arg constructor: FNAME[input.txt]
+1 [main] DEBUG Main  - Beginning the main program.
+1 [main] DEBUG Main  - Exiting the main program.
+2325 [main] DEBUG MorseCodeTranslator  - Beginning the sentence translation
+2326 [main] DEBUG MorseCodeTranslator  - Ended the sentence translation
+29090 [main] DEBUG MorseCodeTranslator  - Beginning the sentence translation
+29090 [main] DEBUG MorseCodeTranslator  - Ended the sentence translation
+33583 [main] DEBUG MorseCodeTranslator  - Beginning the sentence translation
+33583 [main] DEBUG MorseCodeTranslator  - Ended the sentence translation
+0 [main] DEBUG MorseCodeTranslator  - Inside the MorseCodeTranslator's 1-arg constructor: FNAME[input.txt]
+1 [main] DEBUG Main  - Beginning the main program.
+1 [main] DEBUG Main  - Exiting the main program.
+5231 [main] DEBUG MorseCodeTranslator  - Beginning the sentence translation
+5231 [main] DEBUG MorseCodeTranslator  - Ended the sentence translation

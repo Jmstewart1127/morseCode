@@ -15,8 +15,20 @@ public class MorseCodeTranslator
 
     public MorseCodeTranslator()
     {
+        morseCodeSymbols = new ArrayList<MorseCodeSymbol>();
     }
 
+    public MorseCodeTranslator(String sentence, String translation, ArrayList<MorseCodeSymbol> morseCodeSymbols)
+    {
+        this.sentence = sentence;
+        this.translation = translation;
+        this.morseCodeSymbols = morseCodeSymbols;
+    }
+
+    public MorseCodeTranslator(ArrayList<MorseCodeSymbol> morseCodeSymbols)
+    {
+        this.morseCodeSymbols = morseCodeSymbols;
+    }
 
     public MorseCodeTranslator(String inputFileName)
     {
@@ -25,6 +37,13 @@ public class MorseCodeTranslator
         //  SNIP SNIP SNIP
 
     }
+
+
+    public ArrayList<MorseCodeSymbol> getMorseCodeSymbols()
+    {
+        return this.morseCodeSymbols;
+    }
+
     public void examineSymbolCollection()
     {
         //  SNIP SNIP SNIP
@@ -33,9 +52,9 @@ public class MorseCodeTranslator
 
     public void translateSentence(String inputString)
     {
-        Logger.getLogger(MorseCodeTranslator.class.getName()).debug("Beginning the sentence translation");
+        MorseCodeSymbol symbol = new MorseCodeSymbol();
 
-        //  SNIP SNIP SNIP
+        Logger.getLogger(MorseCodeTranslator.class.getName()).debug("Beginning the sentence translation");
 
         System.out.println("Translation: " + translation);
         Logger.getLogger(MorseCodeTranslator.class.getName()).debug("Ended the sentence translation");
@@ -44,6 +63,8 @@ public class MorseCodeTranslator
 
     private void translateIndividualLetter(String inputLetter)
     {
+        //MorseCodeSymbol symbol = new MorseCodeSymbol(inputLetter);
+//        symbol.
     }
 
     private void initializeSymbols(String inputFileName)
@@ -52,6 +73,8 @@ public class MorseCodeTranslator
         String letter;
         String symbol;
 
-        //  SNIP SNIP SNIP
+        //  // // //
     }
+
+
 }
