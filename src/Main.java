@@ -1,35 +1,26 @@
+import org.apache.log4j.Logger;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import org.apache.log4j.*;
 
 public class Main
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner scannerIn = new Scanner(System.in);
-        Scanner s = new Scanner(new File('input.txt'));
-        MorseCodeTranslator txtFile = new MorseCodeTranslator();
-
-        while (s.hasNext())
-        {
-            txtFile.add(s.next());
-        }
-
-        ArrayList<MorseCodeSymbol> morseCodeSymbols;
-	    MorseCodeTranslator decoderRing = new MorseCodeTranslator("input.txt");
-        MorseCodeTranslator symbolBank = new MorseCodeTranslator(morseCodeSymbols);
-	    String inputString = "";
-	    String answer = "";
-	    String yn = "";
-
-	    Logger.getLogger(Main.class.getName()).debug("Beginning the main program.");
-
-	    MorseCodeTranslator translate = new MorseCodeTranslator();
+        String sentence;
+        String translation;
+        String letter;
+        String symbol;
+        String fileName = "input.txt";
+        String yn;
 
 
 
-        Logger.getLogger(Main.class.getName()).debug("Exiting the main program.");
+        MorseCodeTranslator translator = new MorseCodeTranslator(fileName);
+        translator.translateSentence(fileName);
+
+        MorseCodeSymbol theSymbols = new MorseCodeSymbol();
 
         System.out.print("Do you want to do some Morse Code translations? (Y/N)?");
         yn = scannerIn.next();
@@ -37,9 +28,11 @@ public class Main
         while (yn.equals("y"))
         {
             System.out.print("Enter a sentence (to be translated into Morse Code): ");
-            inputString = scannerIn.next();
-            translate.translateSentence(inputString);
-
+            sentence = scannerIn.next();
+            translator.translateSentence(sentence);
+            System.out.print("Do you want to do some Morse Code translations? (Y/N)? ");
+            yn = scannerIn.next();
         }
+
     }
 }

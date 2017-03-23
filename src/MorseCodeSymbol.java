@@ -15,23 +15,29 @@ public class MorseCodeSymbol
 
     }
 
+
     public MorseCodeSymbol(String letter, String symbol)
     {
         this.letter = letter;
         this.symbol = symbol;
+        Logger.getLogger(MorseCodeTranslator.class.getName()).debug( String.format("Inside the MorseCodeSymbol's 2-arg constructor: L[%s] S[%s]", letter, symbol));
     }
 
-
-    // ACCESSORS
 
     public String getLetter()
     {
         return this.letter;
     }
 
+    public String getEntry()
+    {
+        return toString();
+    }
+
+
     public String toString()
     {
-        return String.format("Translation: %s ", letter);
+        return String.format("Letter: %s Symbol: %s ", letter, symbol);
     }
 
 

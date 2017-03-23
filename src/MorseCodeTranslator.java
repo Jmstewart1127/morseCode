@@ -1,8 +1,8 @@
 import org.apache.log4j.Logger;
-
 import java.io.File;
-import java.util.ArrayList;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
  * Created by rharris on 3/8/2017.
@@ -12,69 +12,70 @@ public class MorseCodeTranslator
     private String sentence;
     private String translation;
     private ArrayList<MorseCodeSymbol> morseCodeSymbols;
+    Scanner s;
 
     public MorseCodeTranslator()
     {
+        sentence = "";
+        translation = "";
         morseCodeSymbols = new ArrayList<MorseCodeSymbol>();
-    }
-
-    public MorseCodeTranslator(String sentence, String translation, ArrayList<MorseCodeSymbol> morseCodeSymbols)
-    {
-        this.sentence = sentence;
-        this.translation = translation;
-        this.morseCodeSymbols = morseCodeSymbols;
-    }
-
-    public MorseCodeTranslator(ArrayList<MorseCodeSymbol> morseCodeSymbols)
-    {
-        this.morseCodeSymbols = morseCodeSymbols;
     }
 
     public MorseCodeTranslator(String inputFileName)
     {
         Logger.getLogger(MorseCodeTranslator.class.getName()).debug( String.format("Inside the MorseCodeTranslator's 1-arg constructor: FNAME[%s]", inputFileName));
-
-        //  SNIP SNIP SNIP
-
+       try
+       {
+           s = new Scanner(new File(inputFileName));
+           morseCodeSymbols = new ArrayList<MorseCodeSymbol>();
+           initializeSymbols(inputFileName);
+       }
+       catch (FileNotFoundException e)
+       {
+           System.out.println(e.toString());
+       }
     }
 
-
-    public ArrayList<MorseCodeSymbol> getMorseCodeSymbols()
-    {
-        return this.morseCodeSymbols;
-    }
 
     public void examineSymbolCollection()
     {
-        //  SNIP SNIP SNIP
+        for (MorseCodeSymbol symbols : morseCodeSymbols)
+        {
+            System.out.println(symbols.toString());
+        }
     }
 
 
     public void translateSentence(String inputString)
     {
-        MorseCodeSymbol symbol = new MorseCodeSymbol();
-
-        Logger.getLogger(MorseCodeTranslator.class.getName()).debug("Beginning the sentence translation");
-
-        System.out.println("Translation: " + translation);
-        Logger.getLogger(MorseCodeTranslator.class.getName()).debug("Ended the sentence translation");
+        for (int i = 0; i < inputString.length(); i++)
+        {
+            
+        }
     }
 
 
     private void translateIndividualLetter(String inputLetter)
     {
-        //MorseCodeSymbol symbol = new MorseCodeSymbol(inputLetter);
-//        symbol.
+
     }
+
 
     private void initializeSymbols(String inputFileName)
     {
-        String inputLine = "";
+        String inputLine;
         String letter;
         String symbol;
 
-        //  // // //
-    }
+        while(s.hasNext())
+        {
+            inputLine = s.nextLine();
+            letter = inputLine.substring(0, 1);
+            symbol = inputLine.substring(3);
+            morseCodeSymbols.add(new MorseCodeSymbol(letter, symbol));
+        }
+        s.close();
 
+    }
 
 }
